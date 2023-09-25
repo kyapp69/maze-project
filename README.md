@@ -1,6 +1,6 @@
 # Custom SRP Project
 
-This is the Maze project, a continuation of the [Maze 2 Prototype tutorial](https://catlikecoding.com/unity/tutorials/prototypes/maze-2/).
+This is the [Unity Maze project](https://catlikecoding.com/unity/maze/), a continuation of the [Maze 2 Prototype tutorial](https://catlikecoding.com/unity/tutorials/prototypes/maze-2/).
 
 - [CHANGELOG](CHANGELOG.md), for low-level changes to the project.
 
