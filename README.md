@@ -1,4 +1,4 @@
-# Custom SRP Project
+# Maze Project
 
 This is the [Unity Maze project](https://catlikecoding.com/unity/maze/), a continuation of the [Maze 2 Prototype tutorial](https://catlikecoding.com/unity/tutorials/prototypes/maze-2/).
 
