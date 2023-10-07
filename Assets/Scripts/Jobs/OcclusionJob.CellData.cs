@@ -53,19 +53,26 @@ partial struct OcclusionJob
 			east += 1f;
 		}
 
-		public void UpdateForNextCell(MazeFlags cell, Quadrant quadrant, float range) {
+		public void UpdateForNextCell(MazeFlags cell, Quadrant quadrant, float range)
+		{
+			bool cutCorners = cell.HasAny(MazeFlags.CutCorners);
+
 			if (cell.Has(quadrant.south) &&
 				cell.HasNot(quadrant.southeast) &&
 				SouthInset > 0f)
 			{
-				RightSlope = min(RightSlope, EastInset / SouthInset);
+				RightSlope =
+					min(RightSlope, (cutCorners ? east : EastInset) / SouthInset);
 			}
 
 			if (cell.Has(quadrant.north) && IsInRange(max(0f, west), north, range))
 			{
 				if (cell.HasNot(quadrant.northwest) && WestInset > 0f)
 				{
-					LeftSlope = max(LeftSlope, WestInset / NorthInset);
+					LeftSlope = max(LeftSlope,
+						cutCorners ?
+							NorthInset < west ? west / NorthInset : WestInset / north :
+						WestInset / NorthInset);
 				}
 
 				RightSlopeForNorthNeighbor = min(RightSlope,

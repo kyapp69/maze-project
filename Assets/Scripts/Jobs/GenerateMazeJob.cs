@@ -10,7 +10,11 @@ public struct GenerateMazeJob : IJob
 
 	public int seed;
 
-	public float pickLastProbability, openDeadEndProbability, openArbitraryProbability;
+	public float
+		pickLastProbability,
+		openDeadEndProbability,
+		openArbitraryProbability,
+		cutCornerProbability;
 
 	public void Execute()
 	{
@@ -67,6 +71,11 @@ public struct GenerateMazeJob : IJob
 		if (openArbitraryProbability > 0f)
 		{
 			random = OpenArbitraryPasssages(random);
+		}
+
+		if (cutCornerProbability > 0f)
+		{
+			random = CutCorners(random);
 		}
 	}
 
@@ -166,6 +175,18 @@ public struct GenerateMazeJob : IJob
 			{
 				maze.Set(i, MazeFlags.PassageS);
 				maze.Set(i + maze.StepS, MazeFlags.PassageN);
+			}
+		}
+		return random;
+	}
+
+	Random CutCorners(Random random)
+	{
+		for (int i = 0; i < maze.Length; i++)
+		{
+			if (random.NextBool())
+			{
+				maze.Set(i, MazeFlags.CutCorners);
 			}
 		}
 		return random;

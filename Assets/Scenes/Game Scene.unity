@@ -260,7 +260,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cf542abc55b2b4d0aa15db47e9d436fd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  visualization: {fileID: 11400000, guid: e4a021dc00b784ff0bf7c21d81717b19, type: 2}
+  visualizationFullCorners: {fileID: 11400000, guid: e4a021dc00b784ff0bf7c21d81717b19, type: 2}
+  visualizationCutCorners: {fileID: 11400000, guid: fc3326afaf888410b994edf891228033, type: 2}
   mazeSize:
     x: 20
     y: 20
@@ -268,6 +269,7 @@ MonoBehaviour:
   pickLastProbability: 0.5
   openDeadEndProbability: 0.5
   openArbitraryProbability: 0.25
+  cutCornerProbability: 0.5
   player: {fileID: 2084950774}
   agents:
   - {fileID: 1227090527}

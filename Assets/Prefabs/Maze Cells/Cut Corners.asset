@@ -1,0 +1,28 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8a310163412a9494497ae0cb3789e4df, type: 3}
+  m_Name: Cut Corners
+  m_EditorClassIdentifier: 
+  deadEnd: {fileID: 6067123541115678577, guid: c009cfe1cada444d5baec99b58211b74, type: 3}
+  straight: {fileID: 6067123541115678577, guid: 016412bc13f3b4eed84098fa712d5c50, type: 3}
+  cornerClosed: {fileID: 7209313294778615911, guid: eb4efaf911fc3457c9613a4cc15d235d, type: 3}
+  cornerOpen: {fileID: 7209313294778615911, guid: 4290fd60b68714f11ace165a45c4889e, type: 3}
+  tJunctionClosed: {fileID: 5424861384642423633, guid: a27f68840d64c47eb9ff923ffba6ae5c, type: 3}
+  tJunctionOpenNE: {fileID: 5424861384642423633, guid: aedcc73c1535e4d2cbf3f699ec4097bf, type: 3}
+  tJunctionOpenSE: {fileID: 5424861384642423633, guid: d94d2acf822de43478dae036222f32c5, type: 3}
+  tJunctionOpen: {fileID: 5424861384642423633, guid: 5dc1b5f6b922a4749bc84e8ff436abdd, type: 3}
+  xJunctionClosed: {fileID: 5334429452323505308, guid: f4318a48f9de04d2a983b7ae0cd7c173, type: 3}
+  xJunctionOpenNE: {fileID: 5334429452323505308, guid: d8e57e6bce9024cbfbafb9e0a4615812, type: 3}
+  xJunctionOpenNE_SE: {fileID: 5334429452323505308, guid: fd893841687ea4678abf0ad801299d4d, type: 3}
+  xJunctionOpenNE_SW: {fileID: 5334429452323505308, guid: aae75d7fd0dd544c197dffbc02a9f12a, type: 3}
+  xJunctionClosedNE: {fileID: 5334429452323505308, guid: 5f239517606184904a7f2f9f4d8a7cea, type: 3}
+  xJunctionOpen: {fileID: 5334429452323505308, guid: 3d8aa9630c85a48bca0f04d03d08d584, type: 3}

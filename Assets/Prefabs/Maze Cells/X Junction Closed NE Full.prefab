@@ -599,7 +599,7 @@ GameObject:
   - component: {fileID: 8016878194023439161}
   - component: {fileID: 5334429452323505308}
   m_Layer: 0
-  m_Name: X Junction Closed NE
+  m_Name: X Junction Closed NE Full
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

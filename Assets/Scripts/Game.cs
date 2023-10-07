@@ -11,7 +11,7 @@ using Random = UnityEngine.Random;
 public class Game : MonoBehaviour
 {
 	[SerializeField]
-	MazeVisualization visualization;
+	MazeVisualization visualizationCutCorners, visualizationFullCorners;
 
 	[SerializeField]
 	int2 mazeSize = int2(20, 20);
@@ -23,7 +23,8 @@ public class Game : MonoBehaviour
 	float
 		pickLastProbability = 0.5f,
 		openDeadEndProbability = 0.5f,
-		openArbitraryProbability = 0.5f;
+		openArbitraryProbability = 0.5f,
+		cutCornerProbability = 0.5f;
 
 	[SerializeField]
 	Player player;
@@ -63,14 +64,20 @@ public class Game : MonoBehaviour
 				seed = seed != 0 ? seed : Random.Range(1, int.MaxValue),
 				pickLastProbability = pickLastProbability,
 				openDeadEndProbability = openDeadEndProbability,
-				openArbitraryProbability = openArbitraryProbability
+				openArbitraryProbability = openArbitraryProbability,
+				cutCornerProbability = cutCornerProbability
 			}.Schedule()).Complete();
 
 		if (cellObjects == null || cellObjects.Length != maze.Length)
 		{
 			cellObjects = new MazeCellObject[maze.Length];
 		}
-		visualization.Visualize(maze, cellObjects);
+
+		for (int i = 0; i < maze.Length; i++)
+		{
+			cellObjects[i] = (maze[i].Has(MazeFlags.CutCorners) ?
+				visualizationCutCorners : visualizationFullCorners).Visualize(maze, i);
+		}
 
 		if (seed != 0)
 		{
